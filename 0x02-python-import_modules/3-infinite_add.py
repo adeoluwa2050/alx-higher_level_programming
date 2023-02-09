@@ -8,4 +8,4 @@ if __name__ == '__main__':
     for i, arg in enumerate(argv[1:]):
         sum += int(arg)
 
-    print('{:d}'.format(sum)
+    print('{:d}'.format(sum))
