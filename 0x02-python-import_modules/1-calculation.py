@@ -2,14 +2,11 @@
 
 
 if __name__ == '__main__':
-    from sys import argv
+    from calculator_1 import add, sub, mul, div
 
-    if len(argv) == 1:
-        print('0 arguments.')
-    elif len(argv) == 2:
-        print('{:d} argument:'.format(len(argv) - 1))
-    else:
-        print('{:d} arguments:'.format(len(argv) - 1))
-
-    for i, arg in enumerate(argv[1:], start=1):
-        print('{:d}: {:s}'.format(i, arg))
+    a = 10
+    b = 5
+    print('{:d} + {:d} = {:d}'.format(a, b, add(a, b)))
+    print('{:d} - {:d} = {:d}'.format(a, b, sub(a, b)))
+    print('{:d} * {:d} = {:d}'.format(a, b, mul(a, b)))
+    print('{:d} / {:d} = {:d}'.format(a, b, div(a, b)
