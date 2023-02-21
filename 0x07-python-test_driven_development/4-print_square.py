@@ -1,27 +1,57 @@
-#!/usr/bin/python3
+The ``4-print_square`` module
+============================
 
-"""
-This module contain a function that prints a square
-"""
+Using ``print_square``
+---------------------
 
+Importing function from the module:
 
-def print_square(size):
-    """This function prints a square with the character #
-    Args:
-        size (int): This represents the length of the square
-    Raises:
-        TypeError: If size is not an integer
-        TypeError: If size is a float and less than zero
-        ValueError: If size is less than zero
-    """
+    >>> print_square = __import__('4-print_square').print_square
 
-    if not isinstance(size, int):
-        raise TypeError("size must be an integer")
-    elif size < 0:
-        raise ValueError("size must be >= 0")
-    elif isinstance(size, float) and size < 0:
-        raise TypeError("size must be an integer")
-    for n in range(0, size):
-        for m in range(size):
-            print("#", end="")
-        print("")
+Printing a square with a size of 5
+
+    >>> print_square(5)
+    #####
+    #####
+    #####
+    #####
+    #####
+
+Passing 0 as the size of the square
+
+    >>> print_square(0)
+
+Passing a float number as the size of the square
+
+    >>> print_square(1.0)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: size must be an integer
+
+Passing a string as the size of the square
+
+    >>> print_square('2')
+    Traceback (most recent call last):
+    	      ...
+    TypeError: size must be an integer
+
+Passing a negative number as the size of the square
+
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    	     ...
+    ValueError: size must be >= 0
+
+Passing None as the size of the square
+
+    >>> print_square(None)
+    Traceback (most recent call last):
+    	      ...
+    TypeError: size must be an integer
+
+Missing argument
+
+   >>> print_square()
+   Traceback (most recent call last):
+   	     ...
+   TypeError: print_square() missing 1 required positional argument: 'size'
