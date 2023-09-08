@@ -2,12 +2,12 @@
 """Module defines class Square
 subclass of class Rectangle
 """
-BaseGeometry = __import__('9-rectangle').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(BaseGeometry):
+class Square(Rectangle):
     """
-    A Square class shape, inherits from BaseGeometry
+    A Square class
     """
     def __init__(self, size):
         """"
@@ -24,7 +24,7 @@ class Square(BaseGeometry):
         Returns:
             Return width/height.
         """
-        return f"[Square] {self.__size}/{self.__size}"
+        return "[Square] " + str(self.__size) + "/" + str(self.__size)
 
     def area(self):
         """
